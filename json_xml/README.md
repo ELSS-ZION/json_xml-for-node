@@ -51,4 +51,4 @@ var jsonObj = json_xml.xml2json(jsonObj)
 ```
 
 ## Example
-+ [json_xml examples](https://github.com/ELSS-ZION/ueditor-for-node/tree/master/examples)
++ [json_xml examples](https://github.com/ELSS-ZION/json_xml-for-node/tree/master/example)
