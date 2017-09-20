@@ -3,7 +3,6 @@
 XML to JSON, JSON to XML
 
 ## XML to JSON
-
 ``` xml
 <xml>
   <appid>wx2421b1c4370ec43b</appid>
@@ -18,7 +17,7 @@ XML to JSON, JSON to XML
 const json_xml = require('json_xml')
 var jsonObj = json_xml.xml2json(xmlStr)
 ```
-``` json
+```
 { xml:
    { appid: 'wx2421b1c4370ec43b',
      attach: [ 'attach1', 'attach2' ],
@@ -28,7 +27,7 @@ var jsonObj = json_xml.xml2json(xmlStr)
 ```
 
 ## JSON to XML
-``` json
+```
 { xml:
    { appid: 'wx2421b1c4370ec43b',
      attach: [ 'attach1', 'attach2' ],
