@@ -1,7 +1,8 @@
 # json_xml
 
-  XML to JSON, JSON to XML, express middleware(req.body to JSON)
-
+  + XML to JSON
+  + JSON to XML
+  + express middleware( req.body: JSON, req.rawBody: XML )
 
 ---
 ## XML to JSON
