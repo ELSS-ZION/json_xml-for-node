@@ -67,7 +67,7 @@ exports.middleware = (req, res, next) => {
     if (req.method == 'GET' || req.method == 'HEAD') return next()
     if (!req.is('text/xml')) return next()
     
-    req._body = true;
+    req._body = true
 
     req.rawBody = ''
 
