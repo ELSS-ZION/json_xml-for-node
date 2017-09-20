@@ -1,13 +1,16 @@
 # json_xml
 
-  XML to JSON, JSON to XML
+  XML to JSON, JSON to XML, express middleware(req.body to JSON)
 
-### XML to JSON
+
+---
+## XML to JSON
+
 ```
 const json_xml = require('json_xml')
 var jsonObj = json_xml.xml2json(xmlStr)
 ```
-#### TYPE 1
+### TYPE 1
 ``` xml
 <xml>
   <appid>wx2421b1c4370ec43b</appid>
@@ -26,7 +29,7 @@ var jsonObj = json_xml.xml2json(xmlStr)
      sign: '',
      fee_type: { is_subscribe: 'Y' } } }
 ```
-#### TYPE 2
+### TYPE 2
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <ROOT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="JobSendedDescription">
@@ -45,8 +48,8 @@ var jsonObj = json_xml.xml2json(xmlStr)
      StockReduced: '1',
      ErrPhones: '' } }
 ```
-
-### JSON to XML
+---
+## JSON to XML
 ```
 const json_xml = require('json_xml')
 var jsonObj = json_xml.xml2json(jsonObj)
@@ -73,5 +76,21 @@ var jsonObj = json_xml.xml2json(jsonObj)
 </xml>
 ```
 
+---
+## As Middleware
+``` js
+const express = require('express')
+const app = express()
+const app = express()
+
+app.use(json_xml.middleware)
+app.post('/', (req, res) => {
+    console.log(req.rawBody) // XML
+    console.log(req.body) // JSON
+    res.send('success')
+})
+```
+
+---
 ## Examples
 + [json_xml examples](https://github.com/ELSS-ZION/json_xml-for-node/tree/master/examples)

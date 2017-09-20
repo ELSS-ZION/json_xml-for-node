@@ -1,0 +1,8 @@
+<xml>
+  <appid>wx2421b1c4370ec43b</appid>
+  <attach><![CDATA[attach1]]></attach>
+  <attach>attach2</attach>
+  <bank_type>1</bank_type>
+  <sign></sign>
+  <fee_type><is_subscribe><![CDATA[Y]]></is_subscribe></fee_type>
+</xml>

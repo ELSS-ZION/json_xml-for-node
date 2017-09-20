@@ -18,7 +18,7 @@ exports.json2xml = function (jsonObj) {
     }
     return xmlstr
 }
-var i = 0
+
 exports.xml2json = function (xmlStr) {
     xmlStr = xmlStr.replace(/^\s*<\?xml[\S\s]*?\?>/, '')
 
@@ -60,4 +60,23 @@ exports.xml2json = function (xmlStr) {
     }
 
     return obj
+}
+
+exports.middleware = (req, res, next) => {
+    if (req._body) return next()
+    if (req.method == 'GET' || req.method == 'HEAD') return next()
+    if (!req.is('text/xml')) return next()
+    
+    req._body = true;
+
+    req.rawBody = ''
+
+    req.on('data', function (chunk) {
+        req.rawBody += chunk;
+    })
+
+    req.on('end', function () {
+        req.body = exports.xml2json(req.rawBody)
+        next()
+    })
 }

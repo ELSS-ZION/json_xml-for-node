@@ -1,0 +1,16 @@
+{
+  "name": "express_middleware",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "elss-zion",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4",
+    "json_xml": "^1.1.0",
+    "request": "^2.82.0"
+  }
+}
