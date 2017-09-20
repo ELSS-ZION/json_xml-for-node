@@ -41,12 +41,14 @@ var jsonObj = json_xml.xml2json(jsonObj)
 ```
 ``` xml
 <xml>
-  <appid>wx2421b1c4370ec43b</appid>
+  <appid><![CDATA[wx2421b1c4370ec43b]]></appid>
   <attach><![CDATA[attach1]]></attach>
-  <attach>attach2</attach>
-  <bank_type>1</bank_type>
-  <sign></sign>
-  <fee_type><is_subscribe><![CDATA[Y]]></is_subscribe></fee_type>
+  <attach><![CDATA[attach2]]></attach>
+  <bank_type><![CDATA[1]]></bank_type>
+  <sign><![CDATA[]]></sign>
+  <fee_type>
+    <is_subscribe><![CDATA[Y]]></is_subscribe>
+  </fee_type>
 </xml>
 ```
 

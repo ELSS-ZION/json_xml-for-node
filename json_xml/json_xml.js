@@ -4,6 +4,14 @@ exports.json2xml = function (jsonObj) {
     }
     var xmlstr = ''
     for (var key in jsonObj) {
+        if (jsonObj[key] instanceof Array) {
+            jsonObj[key].forEach((element) => {
+                xmlstr += '<' + key + '>'
+                xmlstr += arguments.callee(element)
+                xmlstr += '</' + key + '>'
+            })
+            continue
+        }
         xmlstr += '<' + key + '>'
         xmlstr += arguments.callee(jsonObj[key])
         xmlstr += '</' + key + '>'
