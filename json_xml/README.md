@@ -1,0 +1,52 @@
+# json_xml
+
+XML to JSON, JSON to XML
+
+## XML to JSON
+
+``` xml
+<xml>
+  <appid>wx2421b1c4370ec43b</appid>
+  <attach><![CDATA[attach1]]></attach>
+  <attach>attach2</attach>
+  <bank_type>1</bank_type>
+  <sign></sign>
+  <fee_type><is_subscribe><![CDATA[Y]]></is_subscribe></fee_type>
+</xml>
+```
+``` js
+const json_xml = require('json_xml')
+var jsonObj = json_xml.xml2json(xmlStr)
+```
+``` json
+{ xml:
+   { appid: 'wx2421b1c4370ec43b',
+     attach: [ 'attach1', 'attach2' ],
+     bank_type: '1',
+     sign: '',
+     fee_type: { is_subscribe: 'Y' } } }
+```
+
+## JSON to XML
+``` json
+{ xml:
+   { appid: 'wx2421b1c4370ec43b',
+     attach: [ 'attach1', 'attach2' ],
+     bank_type: '1',
+     sign: '',
+     fee_type: { is_subscribe: 'Y' } } }
+```
+``` js
+const json_xml = require('json_xml')
+var jsonObj = json_xml.xml2json(jsonObj)
+```
+``` xml
+<xml>
+  <appid>wx2421b1c4370ec43b</appid>
+  <attach><![CDATA[attach1]]></attach>
+  <attach>attach2</attach>
+  <bank_type>1</bank_type>
+  <sign></sign>
+  <fee_type><is_subscribe><![CDATA[Y]]></is_subscribe></fee_type>
+</xml>
+```

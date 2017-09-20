@@ -1,0 +1,24 @@
+{
+  "name": "json_xml",
+  "version": "1.0.0",
+  "main": "json_xml.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ELSS-ZION/json_xml-for-node.git"
+  },
+  "keywords": [
+    "xml2json",
+    "json2xml",
+    "xml",
+    "json"
+  ],
+  "author": "elss-zion",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ELSS-ZION/json_xml-for-node/issues"
+  },
+  "homepage": "https://github.com/ELSS-ZION/json_xml-for-node#readme"
+}
