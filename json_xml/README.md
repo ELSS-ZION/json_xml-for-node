@@ -1,8 +1,13 @@
 # json_xml
 
-XML to JSON, JSON to XML
+  XML to JSON, JSON to XML
 
-## XML to JSON
+### XML to JSON
+```
+const json_xml = require('json_xml')
+var jsonObj = json_xml.xml2json(xmlStr)
+```
+#### TYPE 1
 ``` xml
 <xml>
   <appid>wx2421b1c4370ec43b</appid>
@@ -13,9 +18,38 @@ XML to JSON, JSON to XML
   <fee_type><is_subscribe><![CDATA[Y]]></is_subscribe></fee_type>
 </xml>
 ```
+``` js
+{ xml:
+   { appid: 'wx2421b1c4370ec43b',
+     attach: [ 'attach1', 'attach2' ],
+     bank_type: '1',
+     sign: '',
+     fee_type: { is_subscribe: 'Y' } } }
+```
+#### TYPE 2
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<ROOT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="JobSendedDescription">
+  <RetCode>Sucess</RetCode>
+  <JobID>159142093</JobID>
+  <OKPhoneCounts>1</OKPhoneCounts>
+  <StockReduced>1</StockReduced>
+  <ErrPhones />
+</ROOT>
+```
+``` js
+{ ROOT:
+   { RetCode: 'Sucess',
+     JobID: '159142093',
+     OKPhoneCounts: '1',
+     StockReduced: '1',
+     ErrPhones: '' } }
+```
+
+### JSON to XML
 ```
 const json_xml = require('json_xml')
-var jsonObj = json_xml.xml2json(xmlStr)
+var jsonObj = json_xml.xml2json(jsonObj)
 ```
 ``` js
 { xml:
@@ -26,19 +60,6 @@ var jsonObj = json_xml.xml2json(xmlStr)
      fee_type: { is_subscribe: 'Y' } } }
 ```
 
-## JSON to XML
-``` js
-{ xml:
-   { appid: 'wx2421b1c4370ec43b',
-     attach: [ 'attach1', 'attach2' ],
-     bank_type: '1',
-     sign: '',
-     fee_type: { is_subscribe: 'Y' } } }
-```
-```
-const json_xml = require('json_xml')
-var jsonObj = json_xml.xml2json(jsonObj)
-```
 ``` xml
 <xml>
   <appid><![CDATA[wx2421b1c4370ec43b]]></appid>
@@ -52,5 +73,5 @@ var jsonObj = json_xml.xml2json(jsonObj)
 </xml>
 ```
 
-## Example
-+ [json_xml examples](https://github.com/ELSS-ZION/json_xml-for-node/tree/master/example)
+## Examples
++ [json_xml examples](https://github.com/ELSS-ZION/json_xml-for-node/tree/master/examples)

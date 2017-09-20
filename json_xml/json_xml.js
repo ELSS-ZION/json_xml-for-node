@@ -20,28 +20,28 @@ exports.json2xml = function (jsonObj) {
 }
 var i = 0
 exports.xml2json = function (xmlStr) {
-    // if (/^\s*<\?xml[\S\s]*?\?>/.test(xmlStr)) {
-    //     console.log(RegExp['$&'])
-
     xmlStr = xmlStr.replace(/^\s*<\?xml[\S\s]*?\?>/, '')
-    // console.log(xmlStr)
-    // }
+
     var obj = {}
     while (/<([^>\s]+)[\S\s]*?>/.test(xmlStr)) {
         var tagName = RegExp.$1
-        
+        if (/\s*\/\s*>$/.test(RegExp['$&'])) {
+            xmlStr = xmlStr.replace(RegExp['$&'], '')
+            obj[tagName] = ''
+            continue
+        }
+
         if (/!\[CDATA\[([\S\s]*?)\]\]/.test(xmlStr)) {
             xmlStr = xmlStr.replace(/<!\[CDATA\[([\S\s]*?)\]\]>/, '$1')
             continue
         }
 
-        var regex = '<' + tagName + '>([\\S\\s]*?)<\\/' + tagName + '>'
+        var regex = '<' + tagName + '[\\S\\s]*?>([\\S\\s]*?)<\\/' + tagName + '>'
         regex = new RegExp(regex)
         xmlStr = xmlStr.replace(regex, '')
-        console.log(xmlStr)
-        return
-
+        
         var subNode = arguments.callee(RegExp.$1)
+        
         if (typeof (obj[tagName]) != 'undefined') {
             if (obj[tagName] instanceof Array) {
                 obj[tagName].push(subNode)
