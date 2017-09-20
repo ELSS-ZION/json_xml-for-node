@@ -13,11 +13,11 @@ XML to JSON, JSON to XML
   <fee_type><is_subscribe><![CDATA[Y]]></is_subscribe></fee_type>
 </xml>
 ```
-``` js
+```
 const json_xml = require('json_xml')
 var jsonObj = json_xml.xml2json(xmlStr)
 ```
-```
+``` js
 { xml:
    { appid: 'wx2421b1c4370ec43b',
      attach: [ 'attach1', 'attach2' ],
@@ -27,7 +27,7 @@ var jsonObj = json_xml.xml2json(xmlStr)
 ```
 
 ## JSON to XML
-```
+``` js
 { xml:
    { appid: 'wx2421b1c4370ec43b',
      attach: [ 'attach1', 'attach2' ],
@@ -35,7 +35,7 @@ var jsonObj = json_xml.xml2json(xmlStr)
      sign: '',
      fee_type: { is_subscribe: 'Y' } } }
 ```
-``` js
+```
 const json_xml = require('json_xml')
 var jsonObj = json_xml.xml2json(jsonObj)
 ```
@@ -49,3 +49,6 @@ var jsonObj = json_xml.xml2json(jsonObj)
   <fee_type><is_subscribe><![CDATA[Y]]></is_subscribe></fee_type>
 </xml>
 ```
+
+## Example
++ [json_xml examples](https://github.com/ELSS-ZION/ueditor-for-node/tree/master/examples)
