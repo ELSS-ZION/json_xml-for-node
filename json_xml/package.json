@@ -1,6 +1,6 @@
 {
   "name": "json_xml",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "1.xml to json; 2.json to xml; 3.express middleware",
   "main": "json_xml.js",
   "scripts": {

@@ -7,7 +7,7 @@
 ---
 ## XML to JSON
 
-```
+```js
 const json_xml = require('json_xml')
 var jsonObj = json_xml.xml2json(xmlStr)
 ```
@@ -51,7 +51,7 @@ var jsonObj = json_xml.xml2json(xmlStr)
 ```
 ---
 ## JSON to XML
-```
+```js
 const json_xml = require('json_xml')
 var jsonObj = json_xml.xml2json(jsonObj)
 ```
@@ -79,7 +79,7 @@ var jsonObj = json_xml.xml2json(jsonObj)
 
 ---
 ## As Middleware
-``` js
+```js
 const express = require('express')
 const app = express()
 const app = express()
