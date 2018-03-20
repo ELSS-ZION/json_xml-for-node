@@ -1,4 +1,7 @@
 exports.json2xml = function (jsonObj) {
+    if (typeof (jsonObj) == 'number') {
+        return jsonObj
+    }
     if (typeof (jsonObj) == 'string') {
         return '<![CDATA[' + jsonObj + ']]>'
     }
